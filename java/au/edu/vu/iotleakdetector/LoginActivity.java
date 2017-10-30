@@ -193,10 +193,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        if (mEmailView.getText().equals("fyprojectnet05@gmail.com")) {
+        if (mEmailView.getText().equals("admin")) {
             return true;
         }
-        return email.contains("@");
+       // return email.contains("@");
+        return email.length() > 4;
     }
 
     private boolean isPasswordValid(String password) {
