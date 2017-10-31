@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.JavascriptInterface;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 public class WebViewActivity extends AppCompatActivity {
 
-    String targetAddress = "https://www.vu.edu.au/";
+    String targetAddress = "https://www.vu.edu.au/";;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,7 @@ public class WebViewActivity extends AppCompatActivity {
         myWebView = (WebView) findViewById(R.id.webView);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-
-
+        
        // if (savedInstanceState == null) {
            /* Bundle extras = getIntent().getExtras();
             if(extras == null) {
@@ -46,10 +46,12 @@ public class WebViewActivity extends AppCompatActivity {
             }
         }*/
 
-           targetAddress = getIntent().getStringExtra("qString");
+            Intent i = getIntent();
+            targetAddress = i.getStringExtra("qString");
+            Log.i("TAG", "intent");
+            //targetAddress = getIntent().getStringExtra("qString");
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,10 +77,9 @@ public class WebViewActivity extends AppCompatActivity {
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-
         }
     }
-
+    
     public class WebAppInterface {
         Context mContext;
 
