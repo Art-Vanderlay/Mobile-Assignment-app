@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class WebViewActivity extends AppCompatActivity {
 
-    String targetAddress = "https://www.vu.edu.au/";;
+    String targetAddress = "https://www.vu.edu.au/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
