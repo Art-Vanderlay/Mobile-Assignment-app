@@ -36,7 +36,7 @@ public class WebViewActivity extends AppCompatActivity {
         myWebView = (WebView) findViewById(R.id.webView);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        
+
        // if (savedInstanceState == null) {
            /* Bundle extras = getIntent().getExtras();
             if(extras == null) {
@@ -79,7 +79,7 @@ public class WebViewActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    
+
     public class WebAppInterface {
         Context mContext;
 
